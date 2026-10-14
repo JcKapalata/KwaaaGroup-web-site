@@ -1,17 +1,65 @@
-<div class="phone" [formGroup]="group" [class.is-invalid]="invalid()">
-  <select
-    class="phone__cc"
-    formControlName="country"
-    [attr.aria-label]="i18n.lang() === 'en' ? 'Country code' : 'Indicatif pays'"
-    (blur)="markTouched()"
-  >
-    @for (c of countries(); track c.code) {
-      <option [value]="c.code">{{ c.label }}</option>
-    }
-  </select>
-  <div class="phone__num">
-    <span class="phone__dial" aria-hidden="true">{{ dialPreview() }}</span>
+<div class="phone" [formGroup]="group" [class.is-invalid]="invalid()" [class.is-open]="open()">
+  <div class="phone__shell">
+    <div class="phone__picker">
+      <button
+        type="button"
+        class="phone__trigger"
+        [attr.aria-label]="ui().country"
+        [attr.aria-expanded]="open()"
+        aria-haspopup="listbox"
+        (click)="togglePanel()"
+        (blur)="markTouched()"
+      >
+        @if (selected(); as s) {
+          <span class="phone__flag" aria-hidden="true">{{ s.flag }}</span>
+          <span class="phone__trigger-dial">+{{ s.dial }}</span>
+        }
+        <span class="phone__chev" aria-hidden="true"></span>
+      </button>
+
+      @if (open()) {
+        <div class="phone__panel" role="listbox" [attr.aria-label]="ui().country">
+          <div class="phone__search">
+            <input
+              #searchInput
+              type="search"
+              autocomplete="off"
+              [placeholder]="ui().search"
+              [value]="query()"
+              (input)="onSearchInput($event)"
+              (keydown)="onListKeydown($event)"
+            />
+          </div>
+          <ul class="phone__list">
+            @for (c of filtered(); track c.code; let i = $index) {
+              <li>
+                <button
+                  type="button"
+                  class="phone__opt"
+                  role="option"
+                  [class.is-active]="i === activeIndex()"
+                  [class.is-selected]="c.code === selected().code"
+                  [attr.aria-selected]="c.code === selected().code"
+                  (click)="selectCountry(c)"
+                  (mouseenter)="activeIndex.set(i)"
+                >
+                  <span class="phone__flag" aria-hidden="true">{{ c.flag }}</span>
+                  <span class="phone__name">{{ c.name }}</span>
+                  <span class="phone__code">+{{ c.dial }}</span>
+                </button>
+              </li>
+            } @empty {
+              <li class="phone__empty">{{ ui().empty }}</li>
+            }
+          </ul>
+        </div>
+      }
+    </div>
+
+    <span class="phone__sep" aria-hidden="true"></span>
+
     <input
+      class="phone__national"
       [id]="inputId()"
       type="tel"
       inputmode="tel"
@@ -20,6 +68,7 @@
       maxlength="15"
       (blur)="markTouched()"
       [attr.aria-invalid]="invalid()"
+      [attr.placeholder]="i18n.lang() === 'en' ? 'Phone number' : 'Numéro de téléphone'"
     />
   </div>
 </div>

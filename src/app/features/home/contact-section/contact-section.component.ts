@@ -6,6 +6,7 @@ import { ScrollRevealDirective } from '../../../shared/directives/scroll-reveal.
 import { TextRevealDirective } from '../../../shared/directives/text-reveal.directive';
 import { TranslatePipe } from '../../../shared/pipes/translate.pipe';
 import { RememberReturnDirective } from '../../../shared/directives/remember-return.directive';
+import { SocialLinksComponent } from '../../../shared/components/social-links/social-links.component';
 
 @Component({
   selector: 'app-contact-section',
@@ -16,7 +17,8 @@ import { RememberReturnDirective } from '../../../shared/directives/remember-ret
     ScrollRevealDirective,
     TextRevealDirective,
     TranslatePipe,
-    RememberReturnDirective
+    RememberReturnDirective,
+    SocialLinksComponent
   ],
   templateUrl: './contact-section.component.html',
   styleUrl: './contact-section.component.scss',

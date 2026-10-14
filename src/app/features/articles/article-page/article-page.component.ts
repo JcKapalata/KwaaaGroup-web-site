@@ -38,7 +38,7 @@ import { RememberReturnDirective } from '../../../shared/directives/remember-ret
 })
 export class ArticlePageComponent {
   private readonly route = inject(ActivatedRoute);
-  private readonly lang = inject(LangService);
+  readonly i18n = inject(LangService);
   private readonly sanitizer = inject(DomSanitizer);
   private readonly navReturn = inject(NavReturnService);
   private readonly title = inject(Title);
@@ -56,14 +56,14 @@ export class ArticlePageComponent {
   );
 
   readonly article = computed(() => {
-    this.lang.lang();
+    this.i18n.lang();
     return articleBySlug(this.slug());
   });
 
   readonly copy = computed(() => {
     const a = this.article();
     if (!a) return null;
-    const l = this.lang.lang();
+    const l = this.i18n.lang();
     return {
       tag: a.tag[l],
       ...a[l],
@@ -72,18 +72,18 @@ export class ArticlePageComponent {
   });
 
   readonly related = computed(() => {
-    this.lang.lang();
+    this.i18n.lang();
     const slug = this.slug() as ArticleSlug;
     if (!ARTICLE_ORDER.includes(slug)) return [];
     return nextArticles(slug).map((s) => {
       const a = articleBySlug(s)!;
-      const l = this.lang.lang();
+      const l = this.i18n.lang();
       return { slug: s, tag: a.tag[l], title: a[l].title, lead: a[l].lead };
     });
   });
 
   readonly ui = computed(() => {
-    const en = this.lang.lang() === 'en';
+    const en = this.i18n.lang() === 'en';
     return {
       back: en ? '← Back' : '← Retour',
       brief: en ? 'In brief' : 'En bref',

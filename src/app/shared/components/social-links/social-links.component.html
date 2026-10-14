@@ -1,0 +1,18 @@
+<nav
+  class="social"
+  [class.social--light]="tone() === 'on-light'"
+  aria-label="Réseaux sociaux"
+>
+  @for (s of links; track s.id) {
+    <a
+      class="social__a"
+      [href]="s.href"
+      target="_blank"
+      rel="noopener noreferrer"
+      [attr.aria-label]="s.label"
+      [title]="s.label"
+    >
+      <span class="social__icon" [style.--icon]="'url(' + s.icon + ')'" aria-hidden="true"></span>
+    </a>
+  }
+</nav>

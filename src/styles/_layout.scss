@@ -64,4 +64,10 @@
   text-align: justify;
   text-justify: inter-word;
   hyphens: auto;
+  -webkit-hyphens: auto;
+}
+
+/* Titres / citations / UI courte : alignement naturel */
+.text-start {
+  text-align: start;
 }

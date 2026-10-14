@@ -174,6 +174,7 @@ export const FR: Record<string, string> = {
     'Devis, partenariat ou candidature : écrivez-nous en précisant la branche concernée.',
   'co.b1': 'Demander un devis',
   'co.b2': 'Devenir partenaire',
+  'co.social': 'Nous suivre',
   'c1.l': 'Siège social',
   'c2.l': 'E-mail',
   'c3.l': 'Téléphone',
@@ -185,6 +186,7 @@ export const FR: Record<string, string> = {
   'ft.l3': 'Envoyer une candidature',
   'ft.contact': 'Siège social',
   'ft.slogan': "Là où nous allons, c'est loin.",
+  'ft.social': 'Réseaux sociaux',
   'dv.tag': 'Devis',
   'dv.t': 'Demander un devis',
   'dv.lead':
@@ -394,6 +396,7 @@ export const EN: Record<string, string> = {
     'Quote, partnership or application: write to us and name the branch concerned.',
   'co.b1': 'Request a quote',
   'co.b2': 'Become a partner',
+  'co.social': 'Follow us',
   'c1.l': 'Head office',
   'c2.l': 'Email',
   'c3.l': 'Phone',
@@ -405,6 +408,7 @@ export const EN: Record<string, string> = {
   'ft.l3': 'Send an application',
   'ft.contact': 'Head office',
   'ft.slogan': 'Where we are going is far.',
+  'ft.social': 'Social media',
   'dv.tag': 'Quote',
   'dv.t': 'Request a quote',
   'dv.lead':

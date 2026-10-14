@@ -71,7 +71,10 @@ h1 {
   padding-block-start: 1.25rem;
   font-size: clamp(1.05rem, 1.6vw, 1.25rem);
   color: var(--band-muted);
-  max-width: 40em;
+  max-width: 42em;
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
 }
 
 .vbody {
@@ -133,7 +136,10 @@ h1 {
     color: var(--muted);
     margin: 0;
     padding-block-start: 0.75rem;
-    max-width: 40em;
+    max-width: 42em;
+    text-align: justify;
+    text-justify: inter-word;
+    hyphens: auto;
   }
 }
 

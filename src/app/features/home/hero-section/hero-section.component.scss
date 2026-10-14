@@ -3,6 +3,10 @@
   overflow: hidden;
   background: var(--band);
   color: var(--band-fg);
+  /* Remplit l’écran : bande jaune en bas du viewport, entière */
+  min-height: calc(100svh - var(--header-h, 4.75rem) - var(--stats-h, 7.25rem));
+  display: flex;
+  flex-direction: column;
 
   &::before,
   &::after {
@@ -54,8 +58,13 @@
 .hero__inner {
   position: relative;
   z-index: 1;
-  /* Padding haut serré sous la navbar — bas un peu plus généreux */
-  padding-block: clamp(1.1rem, 2.5vw, 1.75rem) clamp(2rem, 5vw, 3.5rem);
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  /* Plus d’air vertical → la bande jaune descend, reste visible */
+  padding-block: clamp(1.75rem, 4vw, 3rem) clamp(2.5rem, 6vw, 4.25rem);
 }
 
 .slides {
@@ -153,7 +162,7 @@ h1 {
   display: flex;
   align-items: center;
   gap: 0.9rem;
-  padding-block-start: 2.5rem;
+  padding-block-start: clamp(2.2rem, 4vw, 3.25rem);
 }
 
 .dots {
@@ -195,8 +204,8 @@ h1 {
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem 2.25rem;
-  padding-block-start: 1.9rem;
-  margin-block-start: 0.6rem;
+  padding-block-start: clamp(1.9rem, 3.5vw, 2.6rem);
+  margin-block-start: auto;
   border-top: 1px solid rgba(255, 255, 255, 0.14);
   font-size: 0.9rem;
   color: var(--band-muted);
@@ -208,12 +217,32 @@ h1 {
 }
 
 @media (max-width: 760px) {
+  .hero {
+    /* Stats en 2×2 plus hautes sur mobile */
+    min-height: calc(100svh - var(--header-h, 4.75rem) - 11.5rem);
+  }
+
   .slide {
     grid-template-columns: 1fr;
   }
 
   .slide__mark {
     display: none;
+  }
+}
+
+@media (max-height: 680px) {
+  .hero {
+    min-height: 0;
+  }
+
+  .hero__inner {
+    justify-content: flex-start;
+    padding-block: 1.25rem 1.75rem;
+  }
+
+  .hero-meta {
+    margin-block-start: 0.6rem;
   }
 }
 

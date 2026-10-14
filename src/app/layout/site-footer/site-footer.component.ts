@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { BrandMarkComponent } from '../../shared/components/brand-mark/brand-mark.component';
+import { SocialLinksComponent } from '../../shared/components/social-links/social-links.component';
 import { PUBLIC_CONTACT, mailto, telHref } from '../../core/public-contact';
 import { TranslatePipe } from '../../shared/pipes/translate.pipe';
 import { RememberReturnDirective } from '../../shared/directives/remember-return.directive';
@@ -8,7 +9,13 @@ import { RememberReturnDirective } from '../../shared/directives/remember-return
 @Component({
   selector: 'app-site-footer',
   standalone: true,
-  imports: [BrandMarkComponent, TranslatePipe, RouterLink, RememberReturnDirective],
+  imports: [
+    BrandMarkComponent,
+    SocialLinksComponent,
+    TranslatePipe,
+    RouterLink,
+    RememberReturnDirective
+  ],
   templateUrl: './site-footer.component.html',
   styleUrl: './site-footer.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
