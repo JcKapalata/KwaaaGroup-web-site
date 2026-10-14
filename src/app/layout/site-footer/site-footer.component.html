@@ -8,9 +8,9 @@
     <div>
       <h4>{{ 'ft.links' | t }}</h4>
       <ul>
-        <li><a href="#devis">{{ 'ft.l1' | t }}</a></li>
-        <li><a href="#partenariat">{{ 'ft.l2' | t }}</a></li>
-        <li><a [href]="mailHref">{{ 'ft.l3' | t }}</a></li>
+        <li><a routerLink="/devis" appRememberReturn>{{ 'ft.l1' | t }}</a></li>
+        <li><a routerLink="/partenariat" appRememberReturn>{{ 'ft.l2' | t }}</a></li>
+        <li><a [href]="mailApplyHref">{{ 'ft.l3' | t }}</a></li>
       </ul>
     </div>
 
@@ -22,7 +22,7 @@
           <a class="emph" [href]="phoneHref">{{ contact.phoneDisplay }}</a>
         </li>
         <li>
-          <a class="emph" [href]="mailHref">{{ contact.email }}</a>
+          <a class="emph" [href]="mailContactHref">{{ contact.email }}</a>
         </li>
       </ul>
     </div>

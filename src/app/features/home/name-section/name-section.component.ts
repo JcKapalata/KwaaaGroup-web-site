@@ -1,15 +1,22 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
-import { inject } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { ScrollRevealDirective } from '../../../shared/directives/scroll-reveal.directive';
 import { TextRevealDirective } from '../../../shared/directives/text-reveal.directive';
 import { TranslatePipe } from '../../../shared/pipes/translate.pipe';
+import { RememberReturnDirective } from '../../../shared/directives/remember-return.directive';
 import { LangService } from '../../../core/i18n/lang.service';
 
 @Component({
   selector: 'app-name-section',
   standalone: true,
-  imports: [ScrollRevealDirective, TextRevealDirective, TranslatePipe],
+  imports: [
+    ScrollRevealDirective,
+    TextRevealDirective,
+    TranslatePipe,
+    RouterLink,
+    RememberReturnDirective
+  ],
   templateUrl: './name-section.component.html',
   styleUrl: './name-section.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush

@@ -1,13 +1,23 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
+import { RouterLink } from '@angular/router';
 import { mailto } from '../../../core/public-contact';
 import { ScrollRevealDirective } from '../../../shared/directives/scroll-reveal.directive';
 import { TextRevealDirective } from '../../../shared/directives/text-reveal.directive';
+import { TranslatePipe } from '../../../shared/pipes/translate.pipe';
+import { RememberReturnDirective } from '../../../shared/directives/remember-return.directive';
 
 @Component({
   selector: 'app-careers-section',
   standalone: true,
-  imports: [MatIconModule, ScrollRevealDirective, TextRevealDirective],
+  imports: [
+    MatIconModule,
+    RouterLink,
+    ScrollRevealDirective,
+    TextRevealDirective,
+    TranslatePipe,
+    RememberReturnDirective
+  ],
   templateUrl: './careers-section.component.html',
   styleUrl: './careers-section.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
@@ -19,23 +29,23 @@ export class CareersSectionComponent {
   readonly perks = [
     {
       icon: 'school',
-      t: 'Stages rémunérés',
-      p: 'Un stage chez nous est un vrai travail, et il est payé.'
+      tKey: 'p1.t',
+      pKey: 'p1.p'
     },
     {
       icon: 'place',
-      t: "Priorité à l'embauche locale",
-      p: 'À compétence égale, nous recrutons d’abord là où nous travaillons.'
+      tKey: 'p2.t',
+      pKey: 'p2.p'
     },
     {
       icon: 'trending_up',
-      t: 'Évolution au mérite',
-      p: 'Les responsabilités vont à ceux qui obtiennent des résultats.'
+      tKey: 'p3.t',
+      pKey: 'p3.p'
     },
     {
       icon: 'translate',
-      t: 'Français, anglais, langues locales',
-      p: 'Nos langues de travail, pour servir tous nos clients.'
+      tKey: 'p4.t',
+      pKey: 'p4.p'
     }
   ] as const;
 }

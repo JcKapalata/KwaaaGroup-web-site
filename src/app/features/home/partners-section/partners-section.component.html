@@ -15,7 +15,7 @@
         <div class="pc" appScrollReveal [appScrollRevealDelay]="i * 90">
           <h3>{{ c.t }}</h3>
           <p class="text-justify">{{ c.p }}</p>
-          <a [href]="c.href">{{ c.a }}</a>
+          <a [routerLink]="c.href" appRememberReturn>{{ c.a }}</a>
         </div>
       }
     </div>

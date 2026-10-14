@@ -54,7 +54,8 @@
 .hero__inner {
   position: relative;
   z-index: 1;
-  padding-block: clamp(3.5rem, 9vw, 7.5rem) clamp(2.5rem, 6vw, 4.5rem);
+  /* Padding haut serré sous la navbar — bas un peu plus généreux */
+  padding-block: clamp(1.1rem, 2.5vw, 1.75rem) clamp(2rem, 5vw, 3.5rem);
 }
 
 .slides {
@@ -69,19 +70,19 @@
   align-items: center;
   opacity: 0;
   visibility: hidden;
+  pointer-events: none;
+  z-index: 0;
   transform: translate3d(0, 0.75rem, 0);
   transition:
-    opacity 0.7s ease,
-    transform 0.7s ease,
-    visibility 0s 0.7s;
+    opacity 0.55s ease,
+    transform 0.55s ease;
 
   &.on {
     opacity: 1;
     visibility: visible;
+    pointer-events: auto;
+    z-index: 1;
     transform: none;
-    transition:
-      opacity 0.7s ease,
-      transform 0.7s ease;
   }
 }
 

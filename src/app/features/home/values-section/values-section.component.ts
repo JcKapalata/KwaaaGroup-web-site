@@ -1,11 +1,20 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { ScrollRevealDirective } from '../../../shared/directives/scroll-reveal.directive';
 import { TextRevealDirective } from '../../../shared/directives/text-reveal.directive';
+import { TranslatePipe } from '../../../shared/pipes/translate.pipe';
+import { RememberReturnDirective } from '../../../shared/directives/remember-return.directive';
 
 @Component({
   selector: 'app-values-section',
   standalone: true,
-  imports: [ScrollRevealDirective, TextRevealDirective],
+  imports: [
+    RouterLink,
+    ScrollRevealDirective,
+    TextRevealDirective,
+    TranslatePipe,
+    RememberReturnDirective
+  ],
   templateUrl: './values-section.component.html',
   styleUrl: './values-section.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush

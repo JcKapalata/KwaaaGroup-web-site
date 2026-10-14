@@ -2,22 +2,22 @@
 @media (prefers-reduced-motion: no-preference) {
   .reveal {
     opacity: 0;
-    transform: translate3d(0, 2.5rem, 0) rotateX(8deg);
+    transform: translate3d(0, 2.5rem, 0) rotateX(8deg) scale(0.98);
     transform-origin: center top;
     transition:
-      opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
-      transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+      opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
     will-change: opacity, transform;
   }
 
   .reveal.is-in {
     opacity: 1;
-    transform: translate3d(0, 0, 0) rotateX(0);
+    transform: translate3d(0, 0, 0) rotateX(0) scale(1);
   }
 
   .reveal.is-out-up {
     opacity: 0;
-    transform: translate3d(0, -1.5rem, 0) rotateX(-6deg);
+    transform: translate3d(0, -1.5rem, 0) rotateX(-6deg) scale(0.99);
   }
 
   .reveal-text {
@@ -32,6 +32,21 @@
   .reveal-text.is-in {
     opacity: 1;
     transform: none;
+  }
+
+  /* Micro-interactions curseur / clic */
+  .interactive-lift {
+    transition:
+      transform 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+      box-shadow 0.25s ease;
+
+    &:hover {
+      transform: translateY(-4px);
+    }
+
+    &:active {
+      transform: translateY(-1px) scale(0.99);
+    }
   }
 }
 

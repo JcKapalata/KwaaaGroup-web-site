@@ -27,7 +27,7 @@
               <li>{{ tk | t }}</li>
             }
           </ul>
-          <a class="more-link" href="#devis">{{ 'lk.more' | t }}</a>
+          <a class="more-link" [routerLink]="b.route" appRememberReturn>{{ 'lk.more' | t }}</a>
         </article>
       }
     </div>
@@ -36,7 +36,7 @@
       <mat-icon>trending_up</mat-icon>
       <p class="text-justify">
         {{ 'br.future' | t }}
-        <a class="lnk" href="#circularite">{{ 'lk.model' | t }}</a>
+        <a class="lnk" routerLink="/modele" appRememberReturn>{{ 'lk.model' | t }}</a>
       </p>
     </div>
   </div>

@@ -1,0 +1,61 @@
+@if (copy(); as c) {
+  <article class="article">
+    <header class="vhero" appScrollReveal>
+      <div class="wrap">
+        <button type="button" class="back" (click)="goBack()">{{ ui().back }}</button>
+        <p class="eyebrow">{{ c.tag }}</p>
+        <h1 appTextReveal>{{ c.title }}</h1>
+        <p class="vlead text-justify">{{ c.lead }}</p>
+      </div>
+    </header>
+
+    <div class="wrap vbody">
+      <div class="prose">
+        <div class="brief" appScrollReveal [appCursorTilt]="5">
+          <p class="eyebrow">{{ ui().brief }}</p>
+          <ul>
+            @for (item of c.brief; track item; let i = $index) {
+              <li appScrollReveal [appScrollRevealDelay]="i * 80">{{ item }}</li>
+            }
+          </ul>
+        </div>
+        <div
+          class="body"
+          appScrollReveal
+          [innerHTML]="c.body"
+        ></div>
+      </div>
+
+      <aside class="vside">
+        <div class="vcta" appScrollReveal [appCursorTilt]="6">
+          <p>{{ ui().ctaTitle }}</p>
+          <a class="btn btn-gold" routerLink="/devis" appRememberReturn>{{
+            ui().ctaDevis
+          }}</a>
+          <a class="lnk" routerLink="/partenariat" appRememberReturn>{{
+            ui().ctaPartner
+          }}</a>
+        </div>
+      </aside>
+    </div>
+
+    <div class="wrap vnext" appScrollReveal>
+      <p class="eyebrow">{{ ui().next }}</p>
+      <div class="grid3">
+        @for (r of related(); track r.slug; let i = $index) {
+          <a
+            class="imp"
+            [routerLink]="['/', r.slug]"
+            appRememberReturn
+            appScrollReveal
+            [appScrollRevealDelay]="i * 70"
+          >
+            <span class="tag">{{ r.tag }}</span>
+            <h3>{{ r.title }}</h3>
+            <p class="text-justify">{{ r.lead }}</p>
+          </a>
+        }
+      </div>
+    </div>
+  </article>
+}

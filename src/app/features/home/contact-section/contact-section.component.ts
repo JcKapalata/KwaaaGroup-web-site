@@ -1,14 +1,23 @@
 import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
+import { RouterLink } from '@angular/router';
 import { PUBLIC_CONTACT, mailto, telHref } from '../../../core/public-contact';
 import { ScrollRevealDirective } from '../../../shared/directives/scroll-reveal.directive';
 import { TextRevealDirective } from '../../../shared/directives/text-reveal.directive';
 import { TranslatePipe } from '../../../shared/pipes/translate.pipe';
+import { RememberReturnDirective } from '../../../shared/directives/remember-return.directive';
 
 @Component({
   selector: 'app-contact-section',
   standalone: true,
-  imports: [MatIconModule, ScrollRevealDirective, TextRevealDirective, TranslatePipe],
+  imports: [
+    MatIconModule,
+    RouterLink,
+    ScrollRevealDirective,
+    TextRevealDirective,
+    TranslatePipe,
+    RememberReturnDirective
+  ],
   templateUrl: './contact-section.component.html',
   styleUrl: './contact-section.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush

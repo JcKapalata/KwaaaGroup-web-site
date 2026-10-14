@@ -24,13 +24,39 @@
             </h1>
             <p class="lead text-justify">{{ slide.leadKey | t }}</p>
             <div class="ctas">
-              <a class="btn btn-gold" [href]="slide.primary.href">{{
-                slide.primary.labelKey | t
-              }}</a>
-              @if (slide.secondary) {
-                <a class="btn btn-ghost" [href]="slide.secondary.href">{{
-                  slide.secondary.labelKey | t
+              @if (slide.primary.fragment) {
+                <a class="btn btn-gold" routerLink="/" fragment="branches">{{
+                  slide.primary.labelKey | t
                 }}</a>
+              } @else if (slide.primary.remember) {
+                <a
+                  class="btn btn-gold"
+                  [routerLink]="slide.primary.href"
+                  appRememberReturn
+                  >{{ slide.primary.labelKey | t }}</a
+                >
+              } @else {
+                <a class="btn btn-gold" [routerLink]="slide.primary.href">{{
+                  slide.primary.labelKey | t
+                }}</a>
+              }
+              @if (slide.secondary) {
+                @if (slide.secondary.fragment) {
+                  <a class="btn btn-ghost" routerLink="/" fragment="branches">{{
+                    slide.secondary.labelKey | t
+                  }}</a>
+                } @else if (slide.secondary.remember) {
+                  <a
+                    class="btn btn-ghost"
+                    [routerLink]="slide.secondary.href"
+                    appRememberReturn
+                    >{{ slide.secondary.labelKey | t }}</a
+                  >
+                } @else {
+                  <a class="btn btn-ghost" [routerLink]="slide.secondary.href">{{
+                    slide.secondary.labelKey | t
+                  }}</a>
+                }
               }
             </div>
           </div>

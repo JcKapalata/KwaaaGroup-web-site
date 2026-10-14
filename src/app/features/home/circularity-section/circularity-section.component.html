@@ -1,32 +1,106 @@
 <section class="circ block" id="circularite" aria-labelledby="ci-t">
   <div class="wrap circ__grid">
     <div class="loop" aria-hidden="true" appScrollReveal>
-      <div class="ring"></div>
-      <div class="node n1">Construction<small>bâtit les infrastructures</small></div>
-      <div class="node n2">Agro<small>nourrit les événements</small></div>
-      <div class="node n3">Event &amp; Logistique<small>transporte et rassemble</small></div>
-      <div class="node n4">Com &amp; Consulting<small>fait connaître et structure</small></div>
+      <svg class="ring" viewBox="0 0 100 100">
+        <defs>
+          <marker
+            id="ar-circ"
+            viewBox="0 0 10 10"
+            refX="6"
+            refY="5"
+            markerWidth="5"
+            markerHeight="5"
+            orient="auto-start-reverse"
+          >
+            <path d="M0 0L10 5L0 10z" fill="#d8b132" />
+          </marker>
+        </defs>
+        <circle
+          class="ring-dash"
+          cx="50"
+          cy="50"
+          r="38"
+          fill="none"
+          stroke="#778d9e"
+          stroke-opacity=".45"
+          stroke-width=".6"
+          stroke-dasharray="1.5 2"
+        />
+        <path
+          class="arc"
+          d="M66 15.5 A38 38 0 0 1 84.5 34"
+          fill="none"
+          stroke="#d8b132"
+          stroke-width="1.2"
+          marker-end="url(#ar-circ)"
+        />
+        <path
+          class="arc"
+          d="M84.5 66 A38 38 0 0 1 66 84.5"
+          fill="none"
+          stroke="#d8b132"
+          stroke-width="1.2"
+          marker-end="url(#ar-circ)"
+        />
+        <path
+          class="arc"
+          d="M34 84.5 A38 38 0 0 1 15.5 66"
+          fill="none"
+          stroke="#d8b132"
+          stroke-width="1.2"
+          marker-end="url(#ar-circ)"
+        />
+        <path
+          class="arc"
+          d="M15.5 34 A38 38 0 0 1 34 15.5"
+          fill="none"
+          stroke="#d8b132"
+          stroke-width="1.2"
+          marker-end="url(#ar-circ)"
+        />
+      </svg>
+
+      <div class="node n1">
+        Construction<small>{{ 'n1' | t }}</small>
+      </div>
+      <div class="node n2">
+        Agro<small>{{ 'n2' | t }}</small>
+      </div>
+      <div class="node n3">
+        Event &amp; Logistique<small>{{ 'n3' | t }}</small>
+      </div>
+      <div class="node n4">
+        Com &amp; Consulting<small>{{ 'n4' | t }}</small>
+      </div>
+
       <div class="core">
-        <img src="/assets/brand/kwaaa-mark-dark.svg" alt="" decoding="async" />
+        <svg viewBox="0 0 238.5 121.7" aria-hidden="true">
+          <path
+            d="M 231.58 0 C 214.16 22.21 189.32 44.44 159.02 64.09 C 151.28 69.11 143.18 73.96 134.76 78.61 C 132.52 79.84 130.26 81.06 127.97 82.27 C 125.48 83.57 122.96 84.87 120.42 86.14 C 115.83 88.45 111.23 90.64 106.64 92.73 C 77.04 106.21 47.7 115.29 20.71 119.95 C 13.96 121.12 7.13 121.7 0.29 121.7 L 0 121.7 C 28.57 113.12 59.46 98.57 89.57 78.48 C 90.36 77.95 91.16 77.42 91.94 76.88 C 97.02 73.45 101.95 69.93 106.72 66.33 C 108.41 65.07 110.08 63.8 111.73 62.52 C 117.42 58.1 122.88 53.59 128.11 49.01 C 146.2 33.16 161.45 16.49 173.29 0 Z"
+          />
+          <path
+            d="M 169.2 121.7 L 128.95 121.7 C 124.06 114.46 118.67 107.21 112.79 100.02 C 117.63 97.82 122.49 95.51 127.34 93.07 C 130.18 91.66 132.99 90.21 135.76 88.74 C 148.26 99.42 159.46 110.51 169.2 121.7"
+          />
+          <path
+            d="M 238.46 121.7 L 182.18 121.7 C 170.83 109.11 157.64 96.7 142.86 84.89 C 151.78 79.93 160.34 74.74 168.48 69.36 C 195.87 85.13 219.59 103.1 238.46 121.7"
+          />
+        </svg>
       </div>
     </div>
 
     <div appScrollReveal [appScrollRevealDelay]="100">
-      <p class="eyebrow">Circularité</p>
-      <h2 id="ci-t" appTextReveal>Ce qu'une branche produit, l'autre l'utilise.</h2>
-      <p class="intro text-justify">
-        Nos métiers ne sont pas juxtaposés : ils s'alimentent. Ce qui reste dans le groupe coûte
-        moins cher, se contrôle mieux et crée plus d'emplois.
-      </p>
+      <p class="eyebrow">{{ 'ci.eyebrow' | t }}</p>
+      <h2 id="ci-t" appTextReveal>{{ 'ci.t' | t }}</h2>
+      <p class="intro text-justify">{{ 'ci.p' | t }}</p>
       <div class="flows">
-        @for (f of flows; track f.label) {
-          <div class="flow">
-            <b>{{ f.label }}</b>
-            <span class="text-justify">{{ f.text }}</span>
+        @for (f of flows; track f.labelKey; let i = $index) {
+          <div class="flow" appScrollReveal [appScrollRevealDelay]="i * 70">
+            <b>{{ f.labelKey }}</b>
+            <span class="text-justify">{{ f.textKey | t }}</span>
           </div>
         }
       </div>
-      <a class="more-link" href="#devis">Comprendre notre modèle →</a>
+      <a class="more-link" routerLink="/modele" appRememberReturn>{{ 'lk.model2' | t }}</a>
     </div>
   </div>
 </section>

@@ -1,0 +1,74 @@
+.phone {
+  display: grid;
+  grid-template-columns: minmax(8.5rem, 42%) 1fr;
+  gap: 0.55rem;
+  min-width: 0;
+}
+
+.phone__cc,
+.phone__num input {
+  width: 100%;
+  font: 400 1rem var(--body);
+  color: var(--fg);
+  background: var(--surface);
+  border: 1.5px solid var(--line);
+  border-radius: 12px;
+  padding: 0.75rem 0.9rem;
+}
+
+.phone__cc {
+  min-width: 0;
+  cursor: pointer;
+}
+
+.phone__num {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: stretch;
+  min-width: 0;
+  border: 1.5px solid var(--line);
+  border-radius: 12px;
+  background: var(--surface);
+  overflow: hidden;
+
+  input {
+    border: 0;
+    border-radius: 0;
+    padding-inline-start: 0.35rem;
+  }
+}
+
+.phone__dial {
+  display: grid;
+  place-items: center;
+  padding-inline: 0.75rem 0.25rem;
+  font-weight: 600;
+  color: var(--muted);
+  font-size: 0.95rem;
+  white-space: nowrap;
+}
+
+.phone__cc:focus,
+.phone__num:focus-within {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--gold) 30%, transparent);
+}
+
+.phone__num:focus-within {
+  outline: none;
+}
+
+.phone__cc:focus {
+  outline: none;
+}
+
+.phone.is-invalid .phone__cc,
+.phone.is-invalid .phone__num {
+  border-color: #c2410c;
+}
+
+@media (max-width: 560px) {
+  .phone {
+    grid-template-columns: 1fr;
+  }
+}

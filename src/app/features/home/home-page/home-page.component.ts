@@ -9,8 +9,6 @@ import { ValuesSectionComponent } from '../values-section/values-section.compone
 import { PartnersSectionComponent } from '../partners-section/partners-section.component';
 import { CareersSectionComponent } from '../careers-section/careers-section.component';
 import { ContactSectionComponent } from '../contact-section/contact-section.component';
-import { DevisFormComponent } from '../../devis/devis-form/devis-form.component';
-import { PartenariatFormComponent } from '../../partenariat/partenariat-form/partenariat-form.component';
 
 @Component({
   selector: 'app-home-page',
@@ -25,8 +23,6 @@ import { PartenariatFormComponent } from '../../partenariat/partenariat-form/par
     ValuesSectionComponent,
     PartnersSectionComponent,
     CareersSectionComponent,
-    DevisFormComponent,
-    PartenariatFormComponent,
     ContactSectionComponent
   ],
   templateUrl: './home-page.component.html',

@@ -1,20 +1,29 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { ScrollRevealDirective } from '../../../shared/directives/scroll-reveal.directive';
 import { TextRevealDirective } from '../../../shared/directives/text-reveal.directive';
+import { TranslatePipe } from '../../../shared/pipes/translate.pipe';
+import { RememberReturnDirective } from '../../../shared/directives/remember-return.directive';
 
 @Component({
   selector: 'app-circularity-section',
   standalone: true,
-  imports: [ScrollRevealDirective, TextRevealDirective],
+  imports: [
+    RouterLink,
+    ScrollRevealDirective,
+    TextRevealDirective,
+    TranslatePipe,
+    RememberReturnDirective
+  ],
   templateUrl: './circularity-section.component.html',
   styleUrl: './circularity-section.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CircularitySectionComponent {
   readonly flows = [
-    { label: 'Construction → Agro', text: "Entrepôts, bâtiments d'élevage et unités de transformation." },
-    { label: 'Agro → Event', text: 'Restauration des événements avec des produits locaux.' },
-    { label: 'Logistique → Tous', text: 'Transport des matériaux, des récoltes et des équipes.' },
-    { label: 'Consulting → Tous', text: 'Marketing, finance et recrutement pour chaque branche.' }
+    { labelKey: 'Construction → Agro', textKey: 'f1' },
+    { labelKey: 'Agro → Event', textKey: 'f2' },
+    { labelKey: 'Logistique → Tous', textKey: 'f3' },
+    { labelKey: 'Consulting → Tous', textKey: 'f4' }
   ] as const;
 }

@@ -19,8 +19,25 @@
       [class.is-open]="menuOpen()"
       aria-label="Navigation"
     >
-      @for (link of links; track link.href) {
-        <a class="nl" [href]="link.href" (click)="closeMenu()">{{ link.key | t }}</a>
+      @for (link of links; track link.key) {
+        @if ('route' in link) {
+          <a
+            class="nl"
+            [class.nl--cta]="link.cta"
+            [routerLink]="link.route"
+            appRememberReturn
+            (click)="closeMenu()"
+            >{{ link.key | t }}</a
+          >
+        } @else {
+          <a
+            class="nl"
+            routerLink="/"
+            [fragment]="link.fragment"
+            (click)="closeMenu()"
+            >{{ link.key | t }}</a
+          >
+        }
       }
       <div class="lang" role="group" aria-label="Langue / Language">
         <button

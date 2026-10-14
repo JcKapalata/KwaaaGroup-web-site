@@ -1,0 +1,25 @@
+<div class="phone" [formGroup]="group" [class.is-invalid]="invalid()">
+  <select
+    class="phone__cc"
+    formControlName="country"
+    [attr.aria-label]="i18n.lang() === 'en' ? 'Country code' : 'Indicatif pays'"
+    (blur)="markTouched()"
+  >
+    @for (c of countries(); track c.code) {
+      <option [value]="c.code">{{ c.label }}</option>
+    }
+  </select>
+  <div class="phone__num">
+    <span class="phone__dial" aria-hidden="true">{{ dialPreview() }}</span>
+    <input
+      [id]="inputId()"
+      type="tel"
+      inputmode="tel"
+      autocomplete="tel-national"
+      formControlName="national"
+      maxlength="15"
+      (blur)="markTouched()"
+      [attr.aria-invalid]="invalid()"
+    />
+  </div>
+</div>

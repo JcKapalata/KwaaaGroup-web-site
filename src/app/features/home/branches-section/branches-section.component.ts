@@ -1,13 +1,22 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
+import { RouterLink } from '@angular/router';
 import { ScrollRevealDirective } from '../../../shared/directives/scroll-reveal.directive';
 import { TextRevealDirective } from '../../../shared/directives/text-reveal.directive';
 import { TranslatePipe } from '../../../shared/pipes/translate.pipe';
+import { RememberReturnDirective } from '../../../shared/directives/remember-return.directive';
 
 @Component({
   selector: 'app-branches-section',
   standalone: true,
-  imports: [MatIconModule, ScrollRevealDirective, TextRevealDirective, TranslatePipe],
+  imports: [
+    MatIconModule,
+    RouterLink,
+    ScrollRevealDirective,
+    TextRevealDirective,
+    TranslatePipe,
+    RememberReturnDirective
+  ],
   templateUrl: './branches-section.component.html',
   styleUrl: './branches-section.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
@@ -20,6 +29,7 @@ export class BranchesSectionComponent {
     lead?: boolean;
     pKey: string;
     tagKeys: readonly string[];
+    route: string;
   }> = [
     {
       tag: '01 · Construction',
@@ -27,28 +37,32 @@ export class BranchesSectionComponent {
       icon: 'apartment',
       lead: true,
       pKey: 'b1.p',
-      tagKeys: ['b1.l1', 'b1.l2', 'b1.l3', 'b1.l4']
+      tagKeys: ['b1.l1', 'b1.l2', 'b1.l3', 'b1.l4'],
+      route: '/infrastructures'
     },
     {
       tag: '02 · Agro',
       title: 'Agro',
       icon: 'agriculture',
       pKey: 'b2.p',
-      tagKeys: ['b2.l1', 'b2.l2', 'b2.l3', 'b2.l4']
+      tagKeys: ['b2.l1', 'b2.l2', 'b2.l3', 'b2.l4'],
+      route: '/alimentation'
     },
     {
       tag: '03 · Event & Logistique',
       title: 'Event & Logistique',
       icon: 'local_shipping',
       pKey: 'b3.p',
-      tagKeys: ['b3.l1', 'b3.l2', 'b3.l3', 'b3.l4']
+      tagKeys: ['b3.l1', 'b3.l2', 'b3.l3', 'b3.l4'],
+      route: '/mobilite'
     },
     {
       tag: '04 · Communication & Consulting',
       title: 'Communication & Consulting',
       icon: 'campaign',
       pKey: 'b4.p',
-      tagKeys: ['b4.l1', 'b4.l2', 'b4.l3', 'b4.l4']
+      tagKeys: ['b4.l1', 'b4.l2', 'b4.l3', 'b4.l4'],
+      route: '/gestion'
     }
   ];
 }
