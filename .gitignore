@@ -1,0 +1,39 @@
+# Dependencies & build
+/node_modules
+/dist
+/tmp
+/out-tsc
+/bazel-out
+npm-debug.log
+yarn-error.log
+
+# Angular
+/.angular/cache
+.sass-cache/
+/connect.lock
+/coverage
+/libpeerdebug.log
+testem.log
+/typings
+
+# Environments locaux (ne jamais committer de secrets)
+/src/environments/environment.development.ts
+.env
+.env.*
+!.env.example
+
+# Outils / agents / IDE — hors dépôt
+.claude/
+.cursor/
+.trae/
+.continue/
+.idea/
+.history/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/tasks.json
+
+# OS
+.DS_Store
+Thumbs.db
+*.log
