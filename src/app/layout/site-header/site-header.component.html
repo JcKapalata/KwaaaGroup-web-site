@@ -1,16 +1,28 @@
-<header class="site-header">
+<header class="site-header" [class.menu-open]="menuOpen()">
+  @if (menuOpen()) {
+    <button
+      type="button"
+      class="nav-backdrop"
+      (click)="closeMenu()"
+      aria-label="Fermer le menu"
+    ></button>
+  }
+
   <div class="wrap bar">
     <app-brand-mark tone="light" />
 
     <button
       type="button"
       class="menu-btn"
+      [class.is-open]="menuOpen()"
       (click)="toggleMenu()"
       [attr.aria-expanded]="menuOpen()"
       aria-controls="site-nav"
-      aria-label="Menu"
+      [attr.aria-label]="menuOpen() ? 'Fermer le menu' : 'Ouvrir le menu'"
     >
-      <span></span><span></span><span></span>
+      <span></span>
+      <span></span>
+      <span></span>
     </button>
 
     <nav
@@ -24,6 +36,8 @@
           <a
             class="nl"
             [class.nl--cta]="link.cta"
+            [class.is-active]="linkActive(link)"
+            [attr.aria-current]="linkActive(link) ? 'page' : null"
             [routerLink]="link.route"
             appRememberReturn
             (click)="closeMenu()"
@@ -32,6 +46,8 @@
         } @else {
           <a
             class="nl"
+            [class.is-active]="linkActive(link)"
+            [attr.aria-current]="linkActive(link) ? 'page' : null"
             routerLink="/"
             [fragment]="link.fragment"
             (click)="closeMenu()"
