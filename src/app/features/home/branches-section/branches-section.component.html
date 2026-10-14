@@ -1,0 +1,43 @@
+<section class="branches block" id="branches" aria-labelledby="br-t">
+  <div class="wrap">
+    <div class="head" appScrollReveal>
+      <div>
+        <p class="eyebrow">{{ 'br.eyebrow' | t }}</p>
+        <h2 id="br-t" appTextReveal>{{ 'br.t' | t }}</h2>
+      </div>
+      <p class="text-justify">{{ 'br.p' | t }}</p>
+    </div>
+
+    <div class="grid4">
+      @for (b of branches; track b.title; let i = $index) {
+        <article
+          class="br"
+          [class.lead-br]="b.lead"
+          appScrollReveal
+          [appScrollRevealDelay]="i * 90"
+        >
+          <div class="ico">
+            <mat-icon>{{ b.icon }}</mat-icon>
+          </div>
+          <span class="tag">{{ b.tag }}</span>
+          <h3>{{ b.title }}</h3>
+          <p class="text-justify">{{ b.pKey | t }}</p>
+          <ul>
+            @for (tk of b.tagKeys; track tk) {
+              <li>{{ tk | t }}</li>
+            }
+          </ul>
+          <a class="more-link" href="#devis">{{ 'lk.more' | t }}</a>
+        </article>
+      }
+    </div>
+
+    <div class="future" appScrollReveal>
+      <mat-icon>trending_up</mat-icon>
+      <p class="text-justify">
+        {{ 'br.future' | t }}
+        <a class="lnk" href="#circularite">{{ 'lk.model' | t }}</a>
+      </p>
+    </div>
+  </div>
+</section>

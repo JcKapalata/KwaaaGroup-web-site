@@ -1,0 +1,36 @@
+<footer class="site-footer">
+  <div class="wrap fgrid">
+    <div class="fgrid__brand">
+      <app-brand-mark tone="light" />
+      <p class="slogan">{{ 'ft.slogan' | t }}</p>
+    </div>
+
+    <div>
+      <h4>{{ 'ft.links' | t }}</h4>
+      <ul>
+        <li><a href="#devis">{{ 'ft.l1' | t }}</a></li>
+        <li><a href="#partenariat">{{ 'ft.l2' | t }}</a></li>
+        <li><a [href]="mailHref">{{ 'ft.l3' | t }}</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h4>{{ 'ft.contact' | t }}</h4>
+      <ul>
+        <li>{{ contact.address }}</li>
+        <li>
+          <a class="emph" [href]="phoneHref">{{ contact.phoneDisplay }}</a>
+        </li>
+        <li>
+          <a class="emph" [href]="mailHref">{{ contact.email }}</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="fbot">
+    <div class="wrap">
+      © {{ year }} {{ contact.legalName }} · République démocratique du Congo
+    </div>
+  </div>
+</footer>

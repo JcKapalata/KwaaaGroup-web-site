@@ -1,0 +1,23 @@
+<section class="partners block" id="partenaires" aria-labelledby="pa-t">
+  <div class="wrap">
+    <div class="head" appScrollReveal>
+      <div>
+        <p class="eyebrow">Partenaires</p>
+        <h2 id="pa-t" appTextReveal>Construisons ensemble.</h2>
+      </div>
+      <p class="text-justify">
+        Nous avançons avec ceux qui partagent notre ambition pour le continent.
+      </p>
+    </div>
+
+    <div class="pgrid">
+      @for (c of cards; track c.t; let i = $index) {
+        <div class="pc" appScrollReveal [appScrollRevealDelay]="i * 90">
+          <h3>{{ c.t }}</h3>
+          <p class="text-justify">{{ c.p }}</p>
+          <a [href]="c.href">{{ c.a }}</a>
+        </div>
+      }
+    </div>
+  </div>
+</section>

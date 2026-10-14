@@ -1,0 +1,43 @@
+<header class="site-header">
+  <div class="wrap bar">
+    <app-brand-mark tone="light" />
+
+    <button
+      type="button"
+      class="menu-btn"
+      (click)="toggleMenu()"
+      [attr.aria-expanded]="menuOpen()"
+      aria-controls="site-nav"
+      aria-label="Menu"
+    >
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav
+      id="site-nav"
+      class="nav"
+      [class.is-open]="menuOpen()"
+      aria-label="Navigation"
+    >
+      @for (link of links; track link.href) {
+        <a class="nl" [href]="link.href" (click)="closeMenu()">{{ link.key | t }}</a>
+      }
+      <div class="lang" role="group" aria-label="Langue / Language">
+        <button
+          type="button"
+          [attr.aria-pressed]="lang.lang() === 'fr'"
+          (click)="setLang('fr')"
+        >
+          FR
+        </button>
+        <button
+          type="button"
+          [attr.aria-pressed]="lang.lang() === 'en'"
+          (click)="setLang('en')"
+        >
+          EN
+        </button>
+      </div>
+    </nav>
+  </div>
+</header>

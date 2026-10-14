@@ -1,0 +1,30 @@
+<section class="impact block" id="impact" aria-labelledby="im-t">
+  <div class="wrap">
+    <div class="head" appScrollReveal>
+      <div>
+        <p class="eyebrow">Notre impact</p>
+        <h2 id="im-t" appTextReveal>Ce que nous voulons changer.</h2>
+      </div>
+      <p class="text-justify">
+        Nos métiers servent un même but : un Congo et une Afrique plus autonomes, construits par
+        leurs propres talents.
+      </p>
+    </div>
+
+    <div class="grid3">
+      @for (item of items; track item.t; let i = $index) {
+        <a
+          class="imp"
+          [href]="item.href"
+          appScrollReveal
+          [appScrollRevealDelay]="i * 70"
+        >
+          <span class="tag">{{ item.tag }}</span>
+          <h3>{{ item.t }}</h3>
+          <p class="text-justify">{{ item.p }}</p>
+          <span class="more">En savoir plus →</span>
+        </a>
+      }
+    </div>
+  </div>
+</section>

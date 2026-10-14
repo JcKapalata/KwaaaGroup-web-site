@@ -1,0 +1,10 @@
+<section class="stats" aria-label="Chiffres clés">
+  <div class="wrap stats__grid">
+    @for (stat of stats; track stat.label; let i = $index) {
+      <div class="stat" appScrollReveal [appScrollRevealDelay]="i * 80">
+        <b>{{ stat.value }}</b>
+        <span>{{ stat.label }}</span>
+      </div>
+    }
+  </div>
+</section>

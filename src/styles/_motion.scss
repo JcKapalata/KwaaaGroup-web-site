@@ -1,0 +1,45 @@
+/* Scroll / 3D reveal — scrubbable via IntersectionObserver + CSS */
+@media (prefers-reduced-motion: no-preference) {
+  .reveal {
+    opacity: 0;
+    transform: translate3d(0, 2.5rem, 0) rotateX(8deg);
+    transform-origin: center top;
+    transition:
+      opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, transform;
+  }
+
+  .reveal.is-in {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) rotateX(0);
+  }
+
+  .reveal.is-out-up {
+    opacity: 0;
+    transform: translate3d(0, -1.5rem, 0) rotateX(-6deg);
+  }
+
+  .reveal-text {
+    display: inline-block;
+    opacity: 0;
+    transform: translate3d(0, 0.6em, 0) skewY(2deg);
+    transition:
+      opacity 0.55s ease,
+      transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .reveal-text.is-in {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal-text {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}

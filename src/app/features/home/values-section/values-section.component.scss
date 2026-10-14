@@ -1,0 +1,148 @@
+.block {
+  padding-block: var(--space-section);
+}
+
+.values {
+  background: var(--band);
+  color: var(--band-fg);
+  position: relative;
+  overflow: hidden;
+
+  .eyebrow {
+    color: var(--gold);
+  }
+
+  .head > p {
+    color: var(--band-muted);
+  }
+
+  .more-link {
+    color: var(--gold);
+  }
+}
+
+.head {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: end;
+  gap: 1.25rem;
+  padding-block-end: 2.75rem;
+
+  h2 {
+    font-size: clamp(2rem, 4.2vw, 3.2rem);
+    font-weight: 800;
+    margin: 0;
+    padding-block-start: 0.6rem;
+  }
+
+  > p {
+    max-width: 30em;
+    margin: 0;
+  }
+}
+
+.vgrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.v {
+  padding: 1.75rem 1.35rem 1.9rem 0;
+  border-inline-end: 1px solid rgba(255, 255, 255, 0.12);
+  min-width: 0;
+
+  & + & {
+    padding-inline-start: 1.35rem;
+  }
+
+  &:last-child {
+    border-inline-end: 0;
+  }
+
+  h3 {
+    font-size: 1.6rem;
+    font-weight: 800;
+    margin: 0;
+  }
+
+  p {
+    color: var(--band-muted);
+    margin: 0;
+    padding-block-start: 0.65rem;
+    font-size: 1rem;
+  }
+}
+
+.rules {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 1.1rem;
+  margin: 0;
+  padding-block-start: 2.5rem;
+}
+
+.rule {
+  padding: 1.5rem;
+  border-radius: var(--radius);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+
+  h3 {
+    font-size: 1.15rem;
+    font-weight: 800;
+    margin: 0;
+    display: flex;
+    gap: 0.65rem;
+    align-items: center;
+
+    i {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--gold);
+      flex: none;
+    }
+  }
+
+  p {
+    color: var(--band-muted);
+    margin: 0;
+    padding-block-start: 0.5rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .vgrid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .v:nth-child(2) {
+    border-inline-end: 0;
+  }
+
+  .v:nth-child(3) {
+    padding-inline-start: 0;
+  }
+
+  .v:nth-child(-n + 2) {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  }
+
+  .rules {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 520px) {
+  .vgrid {
+    grid-template-columns: 1fr;
+  }
+
+  .v {
+    border-inline-end: 0 !important;
+    padding-inline-start: 0 !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  }
+}

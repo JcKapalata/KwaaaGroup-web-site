@@ -1,0 +1,99 @@
+.block {
+  padding-block: var(--space-section);
+}
+
+.contact {
+  background: var(--surface);
+  border-top: 1px solid var(--line);
+}
+
+.head {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: end;
+  gap: 1.25rem;
+  padding-block-end: 1rem;
+
+  h2 {
+    font-size: clamp(2rem, 4.2vw, 3.2rem);
+    font-weight: 800;
+    margin: 0;
+    padding-block-start: 0.6rem;
+  }
+
+  > p {
+    color: var(--muted);
+    max-width: 30em;
+    margin: 0;
+  }
+}
+
+.ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 0;
+  padding-block: 1rem 2rem;
+}
+
+.cgrid {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr 0.95fr;
+  gap: 1.1rem;
+}
+
+.card {
+  padding: 1.6rem;
+  border-radius: var(--radius);
+  background: var(--bg);
+  border: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  min-width: 0;
+
+  mat-icon {
+    color: var(--accent-ink);
+  }
+
+  .lbl {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .val {
+    font-weight: 600;
+    font-size: 1.1rem;
+    overflow-wrap: anywhere;
+    user-select: all;
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+.copy {
+  align-self: flex-start;
+  margin-block-start: auto;
+  padding-block-start: 0.5rem;
+  background: none;
+  border: 1px solid var(--line);
+  color: var(--fg);
+  border-radius: 999px;
+  padding: 0.4rem 0.9rem;
+  font: 600 0.85rem var(--body);
+  cursor: pointer;
+
+  &:hover {
+    border-color: var(--fg);
+  }
+}
+
+@media (max-width: 900px) {
+  .cgrid {
+    grid-template-columns: 1fr;
+  }
+}

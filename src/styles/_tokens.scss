@@ -1,0 +1,40 @@
+/* Brand tokens — alignés maquette Claude / identité Kwaaa */
+:root {
+  --slate: #303a42;
+  --gold: #d8b132;
+  --steel: #778d9e;
+  --white: #ffffff;
+  --bg: #f5f7f9;
+  --surface: #ffffff;
+  --fg: #303a42;
+  --muted: #5b6872;
+  --line: #d9e0e6;
+  --tint: #e8edf1;
+  --accent-ink: #9a7a12;
+  --band: #303a42;
+  --band-fg: #ffffff;
+  --band-muted: #c3ced7;
+  --display: 'Catamaran', 'Segoe UI', system-ui, sans-serif;
+  --body: 'Catamaran', 'Segoe UI', system-ui, sans-serif;
+  --script: 'Great Vibes', 'Brush Script MT', cursive;
+  --radius: 22px;
+  --space-section: clamp(4rem, 9vw, 7.5rem);
+  --space-gutter: clamp(1rem, 3vw, 1.5rem);
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --bg: #262f36;
+    --surface: #303a42;
+    --fg: #f2f5f7;
+    --muted: #b9c5ce;
+    --line: #46535d;
+    --tint: #3a4650;
+    --accent-ink: #d8b132;
+    --band: #1f272d;
+    --band-fg: #ffffff;
+    --band-muted: #b9c5ce;
+    color-scheme: dark;
+  }
+}

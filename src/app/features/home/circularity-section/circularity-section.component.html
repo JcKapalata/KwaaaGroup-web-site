@@ -1,0 +1,32 @@
+<section class="circ block" id="circularite" aria-labelledby="ci-t">
+  <div class="wrap circ__grid">
+    <div class="loop" aria-hidden="true" appScrollReveal>
+      <div class="ring"></div>
+      <div class="node n1">Construction<small>bâtit les infrastructures</small></div>
+      <div class="node n2">Agro<small>nourrit les événements</small></div>
+      <div class="node n3">Event &amp; Logistique<small>transporte et rassemble</small></div>
+      <div class="node n4">Com &amp; Consulting<small>fait connaître et structure</small></div>
+      <div class="core">
+        <img src="/assets/brand/kwaaa-mark-dark.svg" alt="" decoding="async" />
+      </div>
+    </div>
+
+    <div appScrollReveal [appScrollRevealDelay]="100">
+      <p class="eyebrow">Circularité</p>
+      <h2 id="ci-t" appTextReveal>Ce qu'une branche produit, l'autre l'utilise.</h2>
+      <p class="intro text-justify">
+        Nos métiers ne sont pas juxtaposés : ils s'alimentent. Ce qui reste dans le groupe coûte
+        moins cher, se contrôle mieux et crée plus d'emplois.
+      </p>
+      <div class="flows">
+        @for (f of flows; track f.label) {
+          <div class="flow">
+            <b>{{ f.label }}</b>
+            <span class="text-justify">{{ f.text }}</span>
+          </div>
+        }
+      </div>
+      <a class="more-link" href="#devis">Comprendre notre modèle →</a>
+    </div>
+  </div>
+</section>

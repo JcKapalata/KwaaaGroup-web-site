@@ -1,0 +1,20 @@
+.skip {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 100;
+  padding: 0.75rem 1rem;
+  background: var(--gold);
+  color: var(--slate);
+  font-weight: 700;
+  text-decoration: none;
+
+  &:focus {
+    left: 1rem;
+  }
+}
+
+:host {
+  display: block;
+  min-height: 100vh;
+}

@@ -1,0 +1,20 @@
+<section class="name block" id="name" aria-labelledby="name-t">
+  <div class="wrap name__grid">
+    <div class="say" appScrollReveal>
+      KWAAA
+      <small appTextReveal [innerHTML]="sayHtml()"></small>
+    </div>
+    <div appScrollReveal [appScrollRevealDelay]="120">
+      <p class="eyebrow">{{ 'name.eyebrow' | t }}</p>
+      <h2 id="name-t" appTextReveal>{{ 'name.t' | t }}</h2>
+      <p class="text-justify">{{ 'name.p1' | t }}</p>
+      <p class="text-justify">{{ 'name.p2' | t }}</p>
+      <div class="qs">
+        <span>{{ 'q.1' | t }}</span>
+        <span>{{ 'q.2' | t }}</span>
+        <span>{{ 'q.3' | t }}</span>
+      </div>
+      <a class="more-link" href="#devis">{{ 'lk.vision' | t }}</a>
+    </div>
+  </div>
+</section>

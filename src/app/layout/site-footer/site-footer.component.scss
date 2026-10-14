@@ -1,0 +1,62 @@
+.site-footer {
+  background: var(--band);
+  color: var(--band-muted);
+  font-size: 0.95rem;
+}
+
+.fgrid {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr 1.25fr;
+  gap: 2.25rem;
+  padding-block: 3.5rem 2.25rem;
+}
+
+.fgrid h4 {
+  margin: 0;
+  padding-block-end: 0.9rem;
+  color: var(--band-fg);
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.fgrid ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.55rem;
+}
+
+.fgrid a {
+  color: var(--band-fg);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.emph {
+  color: var(--band-fg) !important;
+}
+
+.slogan {
+  margin: 0;
+  padding-block-start: 0.9rem;
+  font-family: var(--script);
+  color: var(--gold);
+  font-size: 1.5rem;
+}
+
+.fbot {
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+
+  .wrap {
+    padding-block: 1.25rem;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 800px) {
+  .fgrid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,32 @@
+<section class="jobs block" id="carrieres" aria-labelledby="jo-t">
+  <div class="wrap jobs__grid">
+    <div appScrollReveal>
+      <p class="eyebrow">Carrières</p>
+      <h2 id="jo-t" appTextReveal>Grandir avec nous.</h2>
+      <p class="intro text-justify">
+        Nous construisons une équipe jeune, exigeante et ancrée là où elle travaille. Envoyez votre
+        CV et une courte lettre en précisant la branche qui vous intéresse.
+      </p>
+      <div class="ctas">
+        <a class="btn btn-gold" [href]="applyHref">Envoyer ma candidature</a>
+        <a class="btn btn-line" href="#valeurs">Nos engagements</a>
+      </div>
+      <p class="mail-note">
+        Ou écrivez directement à
+        <a [href]="applyHref"><strong>{{ email }}</strong></a>
+      </p>
+    </div>
+
+    <div class="perks">
+      @for (perk of perks; track perk.t; let i = $index) {
+        <div class="perk" appScrollReveal [appScrollRevealDelay]="i * 70">
+          <mat-icon>{{ perk.icon }}</mat-icon>
+          <div>
+            <h3>{{ perk.t }}</h3>
+            <p class="text-justify">{{ perk.p }}</p>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

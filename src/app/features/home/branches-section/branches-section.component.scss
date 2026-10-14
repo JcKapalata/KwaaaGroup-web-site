@@ -1,0 +1,146 @@
+.block {
+  padding-block: var(--space-section);
+}
+
+.branches {
+  background: var(--surface);
+  border-block: 1px solid var(--line);
+}
+
+.head {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: end;
+  gap: 1.25rem;
+  margin: 0;
+  padding-block-end: 2.75rem;
+
+  h2 {
+    font-size: clamp(2rem, 4.2vw, 3.2rem);
+    font-weight: 800;
+    margin: 0;
+    padding-block-start: 0.6rem;
+    max-width: 16em;
+  }
+
+  > p {
+    color: var(--muted);
+    max-width: 30em;
+    margin: 0;
+  }
+}
+
+.grid4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.1rem;
+}
+
+.br {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  padding: 1.75rem 1.5rem 1.6rem;
+  border-radius: var(--radius);
+  background: var(--bg);
+  border: 1px solid var(--line);
+  min-width: 0;
+
+  .tag {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  h3 {
+    font-size: 1.55rem;
+    font-weight: 800;
+    margin: 0;
+  }
+
+  p {
+    color: var(--muted);
+    margin: 0;
+    font-size: 1rem;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: auto 0 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  li {
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 0.25rem 0.7rem;
+    border-radius: 999px;
+    border: 1px solid var(--line);
+  }
+}
+
+.ico {
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  background: var(--slate);
+  color: #fff;
+
+  mat-icon {
+    font-size: 1.35rem;
+    width: 1.35rem;
+    height: 1.35rem;
+  }
+}
+
+.lead-br .ico {
+  background: var(--gold);
+  color: var(--slate);
+}
+
+.future {
+  margin: 0;
+  padding: 1.1rem 1.35rem;
+  margin-block-start: 1.6rem;
+  display: flex;
+  gap: 0.9rem;
+  align-items: flex-start;
+  border-radius: 16px;
+  background: var(--tint);
+  font-size: 1rem;
+
+  mat-icon {
+    color: var(--accent-ink);
+    flex: none;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+.lnk {
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--accent-ink);
+}
+
+@media (max-width: 1000px) {
+  .grid4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .grid4 {
+    grid-template-columns: 1fr;
+  }
+}

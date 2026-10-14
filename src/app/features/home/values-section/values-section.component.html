@@ -1,0 +1,39 @@
+<section class="values block" id="valeurs" aria-labelledby="va-t">
+  <div class="wrap">
+    <div class="head" appScrollReveal>
+      <div>
+        <p class="eyebrow">Nos valeurs</p>
+        <h2 id="va-t" appTextReveal>Ce qui guide chaque décision.</h2>
+      </div>
+      <p class="text-justify">
+        Quatre valeurs qui orientent nos décisions, et des règles non négociables.
+      </p>
+    </div>
+
+    <div class="vgrid" appScrollReveal>
+      @for (v of values; track v.t) {
+        <div class="v">
+          <h3>{{ v.t }}</h3>
+          <p class="text-justify">{{ v.p }}</p>
+        </div>
+      }
+    </div>
+
+    <div class="rules">
+      <div class="rule" appScrollReveal>
+        <h3><i></i><span>La méritocratie</span></h3>
+        <p class="text-justify">
+          Nous recrutons et promouvons sur la compétence. Un proche n'est embauché que s'il a le
+          niveau requis.
+        </p>
+      </div>
+      <div class="rule" appScrollReveal [appScrollRevealDelay]="100">
+        <h3><i></i><span>Tolérance zéro</span></h3>
+        <p class="text-justify">
+          Corruption, tribalisme et détournement de fonds n'ont aucune place chez nous, à aucun
+          niveau.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

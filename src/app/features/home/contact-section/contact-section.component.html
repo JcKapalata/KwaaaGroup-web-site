@@ -1,0 +1,45 @@
+<section class="contact block" id="contact" aria-labelledby="co-t">
+  <div class="wrap">
+    <div class="head" appScrollReveal>
+      <div>
+        <p class="eyebrow">{{ 'co.eyebrow' | t }}</p>
+        <h2 id="co-t" appTextReveal>{{ 'co.t' | t }}</h2>
+      </div>
+      <p class="text-justify">{{ 'co.p' | t }}</p>
+    </div>
+
+    <div class="ctas" appScrollReveal>
+      <a class="btn btn-gold" href="#devis">{{ 'co.b1' | t }}</a>
+      <a class="btn btn-line" href="#partenariat">{{ 'co.b2' | t }}</a>
+    </div>
+
+    <div class="cgrid">
+      <div class="card" appScrollReveal>
+        <mat-icon>place</mat-icon>
+        <span class="lbl">{{ 'c1.l' | t }}</span>
+        <span class="val">{{ contact.address }}</span>
+        <button type="button" class="copy" (click)="copy('addr', contact.address)">
+          {{ copied() === 'addr' ? ('copied' | t) : ('copy' | t) }}
+        </button>
+      </div>
+
+      <div class="card" appScrollReveal [appScrollRevealDelay]="80">
+        <mat-icon>email</mat-icon>
+        <span class="lbl">{{ 'c2.l' | t }}</span>
+        <a class="val" [href]="mailHref">{{ contact.email }}</a>
+        <button type="button" class="copy" (click)="copy('mail', contact.email)">
+          {{ copied() === 'mail' ? ('copied' | t) : ('copy' | t) }}
+        </button>
+      </div>
+
+      <div class="card" appScrollReveal [appScrollRevealDelay]="160">
+        <mat-icon>phone</mat-icon>
+        <span class="lbl">{{ 'c3.l' | t }}</span>
+        <a class="val" [href]="phoneHref">{{ contact.phoneDisplay }}</a>
+        <button type="button" class="copy" (click)="copy('tel', contact.phoneDisplay)">
+          {{ copied() === 'tel' ? ('copied' | t) : ('copy' | t) }}
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
