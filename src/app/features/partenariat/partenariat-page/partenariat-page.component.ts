@@ -3,7 +3,12 @@ import { AbstractControl, FormBuilder, ReactiveFormsModule, Validators } from '@
 import { PUBLIC_CONTACT, mailto, telHref } from '../../../core/public-contact';
 import { LangService } from '../../../core/i18n/lang.service';
 import { NavReturnService } from '../../../core/nav-return.service';
-import { minMaxLen, phoneE164, requiredEmail } from '../../../core/form-validators';
+import {
+  lengthErrMsg,
+  minMaxLen,
+  phoneE164,
+  requiredEmail
+} from '../../../core/form-validators';
 import { ScrollRevealDirective } from '../../../shared/directives/scroll-reveal.directive';
 import { TextRevealDirective } from '../../../shared/directives/text-reveal.directive';
 import { CursorTiltDirective } from '../../../shared/directives/cursor-tilt.directive';
@@ -77,8 +82,6 @@ export class PartenariatPageComponent {
       req: en ? 'Required field' : 'Champ obligatoire',
       emailBad: en ? 'Enter a valid email address' : 'Saisissez une adresse e-mail valide',
       phoneBad: en ? 'Enter a valid phone number' : 'Saisissez un numéro de téléphone valide',
-      tooShort: en ? 'Text is too short' : 'Texte trop court',
-      tooLong: en ? 'Text is too long' : 'Texte trop long',
       mailT: en ? 'Last step: send us your request' : 'Dernière étape : envoyez-nous votre demande',
       mailP: en
         ? `Your request is ready. Email it to ${PUBLIC_CONTACT.email}, or copy it and send it by message to ${PUBLIC_CONTACT.phoneDisplay}.`
@@ -169,8 +172,8 @@ export class PartenariatPageComponent {
     if (c.errors['required']) return u.req;
     if (c.errors['email']) return u.emailBad;
     if (c.errors['phone']) return u.phoneBad;
-    if (c.errors['minlength']) return u.tooShort;
-    if (c.errors['maxlength']) return u.tooLong;
+    const len = lengthErrMsg(c.errors, this.i18n.lang());
+    if (len) return len;
     return u.req;
   }
 

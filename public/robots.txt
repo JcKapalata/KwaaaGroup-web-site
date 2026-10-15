@@ -1,0 +1,133 @@
+# KWAAA Group — site vitrine public uniquement
+# Tout le reste est interdit aux robots (sécurité + pas d’exposition d’outils internes).
+
+User-agent: *
+Disallow: /
+Allow: /$
+Allow: /devis$
+Allow: /partenariat$
+Allow: /vision$
+Allow: /modele$
+Allow: /infrastructures$
+Allow: /alimentation$
+Allow: /mobilite$
+Allow: /gestion$
+Allow: /emploi$
+Allow: /integrite$
+Allow: /assets/
+Allow: /icons/
+Allow: /favicon.ico
+Allow: /sitemap.xml
+Allow: /llms.txt
+Allow: /robots.txt
+Allow: /.well-known/security.txt
+
+# Blocages explicites (chemins sensibles / non publics)
+Disallow: /api
+Disallow: /admin
+Disallow: /manager
+Disallow: /login
+Disallow: /auth
+Disallow: /.env
+Disallow: /.git
+Disallow: /node_modules
+Disallow: /src
+Disallow: /*.map$
+Disallow: /*.json$
+
+# Agents IA — mêmes règles (contenu public uniquement)
+User-agent: GPTBot
+Disallow: /
+Allow: /$
+Allow: /devis$
+Allow: /partenariat$
+Allow: /vision$
+Allow: /modele$
+Allow: /infrastructures$
+Allow: /alimentation$
+Allow: /mobilite$
+Allow: /gestion$
+Allow: /emploi$
+Allow: /integrite$
+Allow: /llms.txt
+Allow: /sitemap.xml
+
+User-agent: ChatGPT-User
+Disallow: /
+Allow: /$
+Allow: /devis$
+Allow: /partenariat$
+Allow: /vision$
+Allow: /modele$
+Allow: /infrastructures$
+Allow: /alimentation$
+Allow: /mobilite$
+Allow: /gestion$
+Allow: /emploi$
+Allow: /integrite$
+Allow: /llms.txt
+
+User-agent: Google-Extended
+Disallow: /
+Allow: /$
+Allow: /devis$
+Allow: /partenariat$
+Allow: /vision$
+Allow: /modele$
+Allow: /infrastructures$
+Allow: /alimentation$
+Allow: /mobilite$
+Allow: /gestion$
+Allow: /emploi$
+Allow: /integrite$
+Allow: /llms.txt
+
+User-agent: anthropic-ai
+Disallow: /
+Allow: /$
+Allow: /devis$
+Allow: /partenariat$
+Allow: /vision$
+Allow: /modele$
+Allow: /infrastructures$
+Allow: /alimentation$
+Allow: /mobilite$
+Allow: /gestion$
+Allow: /emploi$
+Allow: /integrite$
+Allow: /llms.txt
+
+User-agent: ClaudeBot
+Disallow: /
+Allow: /$
+Allow: /devis$
+Allow: /partenariat$
+Allow: /vision$
+Allow: /modele$
+Allow: /infrastructures$
+Allow: /alimentation$
+Allow: /mobilite$
+Allow: /gestion$
+Allow: /emploi$
+Allow: /integrite$
+Allow: /llms.txt
+
+User-agent: PerplexityBot
+Disallow: /
+Allow: /$
+Allow: /devis$
+Allow: /partenariat$
+Allow: /vision$
+Allow: /modele$
+Allow: /infrastructures$
+Allow: /alimentation$
+Allow: /mobilite$
+Allow: /gestion$
+Allow: /emploi$
+Allow: /integrite$
+Allow: /llms.txt
+
+User-agent: Bytespider
+Disallow: /
+
+Sitemap: https://www.kwaaagroup.com/sitemap.xml

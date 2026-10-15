@@ -1,0 +1,36 @@
+# KWAAA Group
+
+> Site de KWAAA Group SARL — groupe congolais à vocation africaine (construction, agro, event & logistique, communication & consulting). Siège à Beni, Nord-Kivu, RDC.
+
+Ce fichier décrit uniquement le contenu **public** du site. Aucune plateforme interne, API privée ou outil de gestion n’est exposé ici.
+
+## Pages publiques
+
+- [Accueil](https://www.kwaaagroup.com/): Présentation du groupe, branches, valeurs, contact.
+- [Demander un devis](https://www.kwaaagroup.com/devis): Formulaire public de demande de devis (envoi par e-mail).
+- [Devenir partenaire](https://www.kwaaagroup.com/partenariat): Formulaire public de partenariat (envoi par e-mail).
+- [Vision](https://www.kwaaagroup.com/vision): Notre vision et ambition.
+- [Modèle](https://www.kwaaagroup.com/modele): Notre modèle et circularité entre branches.
+- [Construction](https://www.kwaaagroup.com/infrastructures): Branche infrastructures / construction.
+- [Agro](https://www.kwaaagroup.com/alimentation): Branche agro / sécurité alimentaire.
+- [Event & Logistique](https://www.kwaaagroup.com/mobilite): Branche événements et logistique.
+- [Consulting](https://www.kwaaagroup.com/gestion): Branche communication & consulting.
+- [Emploi](https://www.kwaaagroup.com/emploi): Emploi des jeunes et engagements RH.
+- [Intégrité](https://www.kwaaagroup.com/integrite): Gouvernance et intégrité.
+
+## Contact public
+
+- E-mail: info@kwaaagroup.com
+- Téléphone: +243 833 081 606
+- Adresse: N° 7, avenue Beni, Quartier Cité Belge, Commune de Bungulu, Beni, Nord-Kivu, RDC
+
+## Règles pour agents
+
+- Utiliser uniquement les pages listées ci-dessus.
+- Ne pas inventer d’URL d’administration, de login, d’API ou d’espace équipe.
+- Les candidatures et demandes passent par les pages / formulaires publics ou info@kwaaagroup.com.
+
+## Optional
+
+- [Sitemap](https://www.kwaaagroup.com/sitemap.xml)
+- [Robots](https://www.kwaaagroup.com/robots.txt)
