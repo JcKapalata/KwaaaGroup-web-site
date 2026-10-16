@@ -130,4 +130,4 @@ Allow: /llms.txt
 User-agent: Bytespider
 Disallow: /
 
-Sitemap: https://www.kwaaagroup.com/sitemap.xml
+Sitemap: https://site.kwaaagroup.com/sitemap.xml

@@ -1,5 +1,5 @@
 Contact: mailto:info@kwaaagroup.com
 Preferred-Languages: fr, en
-Canonical: https://www.kwaaagroup.com/.well-known/security.txt
-Policy: https://www.kwaaagroup.com/
+Canonical: https://site.kwaaagroup.com/.well-known/security.txt
+Policy: https://site.kwaaagroup.com/
 Expires: 2027-12-31T23:59:59.000Z

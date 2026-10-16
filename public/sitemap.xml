@@ -1,57 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://www.kwaaagroup.com/</loc>
+    <loc>https://site.kwaaagroup.com/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://www.kwaaagroup.com/devis</loc>
+    <loc>https://site.kwaaagroup.com/devis</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.kwaaagroup.com/partenariat</loc>
+    <loc>https://site.kwaaagroup.com/partenariat</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.kwaaagroup.com/vision</loc>
+    <loc>https://site.kwaaagroup.com/vision</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.kwaaagroup.com/modele</loc>
+    <loc>https://site.kwaaagroup.com/modele</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.kwaaagroup.com/infrastructures</loc>
+    <loc>https://site.kwaaagroup.com/infrastructures</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.kwaaagroup.com/alimentation</loc>
+    <loc>https://site.kwaaagroup.com/alimentation</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.kwaaagroup.com/mobilite</loc>
+    <loc>https://site.kwaaagroup.com/mobilite</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.kwaaagroup.com/gestion</loc>
+    <loc>https://site.kwaaagroup.com/gestion</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.kwaaagroup.com/emploi</loc>
+    <loc>https://site.kwaaagroup.com/emploi</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.kwaaagroup.com/integrite</loc>
+    <loc>https://site.kwaaagroup.com/integrite</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

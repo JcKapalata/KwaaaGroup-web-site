@@ -1,7 +1,7 @@
 /**
  * SEO / crawlers — données publiques uniquement (aucune URL manager / API interne).
  */
-export const SITE_ORIGIN = 'https://www.kwaaagroup.com';
+export const SITE_ORIGIN = 'https://site.kwaaagroup.com';
 
 export const SITE_NAME = 'KWAAA Group';
 
