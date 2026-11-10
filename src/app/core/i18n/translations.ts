@@ -192,7 +192,7 @@ export const FR: Record<string, string> = {
   'dv.lead':
     'Décrivez votre besoin. Nous préparons une réponse claire, branche par branche, avec un seul interlocuteur.',
   'dv.call': 'Vous préférez appeler ?',
-  'dv.send': 'Envoyer la demande',
+  'dv.send': 'Envoi e-mail',
   'dv.privacy': 'Vos informations servent uniquement à traiter votre demande.',
   'dv.req': 'Champ obligatoire',
   'dv.mailT': 'Dernière étape : envoyez-nous votre demande',

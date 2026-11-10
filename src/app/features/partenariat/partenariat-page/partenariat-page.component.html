@@ -10,8 +10,8 @@
 
   <div class="wrap vbody">
     <div class="main" appScrollReveal>
-      @if (!ready()) {
-        <form class="kform" [formGroup]="form" (ngSubmit)="submit()" novalidate>
+      @if (mode() === 'form') {
+        <form class="kform" [formGroup]="form" (ngSubmit)="openConfirm()" novalidate>
           <div class="fgrid2">
             <div class="fld">
               <label for="p-nom">{{ ui().nom }} <span class="rq">*</span></label>
@@ -110,21 +110,55 @@
               }
             </div>
           </div>
+
+          <div class="hp" aria-hidden="true">
+            <label for="p-web">Website</label>
+            <input id="p-web" tabindex="-1" autocomplete="off" formControlName="website" />
+          </div>
+
+          <aside class="banner-attention" role="note">
+            <strong>Important</strong>
+            <p>{{ ui().attention }}</p>
+          </aside>
+
+          @if (formError()) {
+            <p class="banner-err" role="alert">{{ formError() }}</p>
+          }
+
           <div class="factions">
-            <button class="btn btn-gold" type="submit">{{ ui().send }}</button>
+            <button
+              class="btn btn-gold"
+              type="submit"
+              [disabled]="!canSubmit()"
+              [attr.aria-busy]="sending()"
+            >
+              @if (sending()) {
+                <span class="btn-spin" aria-hidden="true"></span>
+                {{ ui().sending }}
+              } @else {
+                {{ ui().send }}
+              }
+            </button>
+            <button
+              type="button"
+              class="btn btn-line"
+              [disabled]="!canSubmit()"
+              (click)="copyRequest()"
+            >
+              {{ copied() ? ui().copied : ui().copy }}
+            </button>
             <span class="note">{{ ui().privacy }}</span>
           </div>
         </form>
       } @else {
         <div class="done">
-          <h2>{{ ui().mailT }}</h2>
-          <p class="text-justify">{{ ui().mailP }}</p>
-          <pre class="recap">{{ recap() }}</pre>
+          <div class="done-ico" aria-hidden="true"><span class="mail-pulse"></span></div>
+          <h2>{{ ui().inboxT }}</h2>
+          <p class="text-justify">{{ ui().inboxP }}</p>
+          @if (submittedEmail()) {
+            <p class="submitted-mail">{{ submittedEmail() }}</p>
+          }
           <div class="ctas">
-            <a class="btn btn-gold" [href]="mailtoReady()">{{ ui().mailB }}</a>
-            <button type="button" class="btn btn-line" (click)="copyRecap()">
-              {{ copied() ? ui().copied : ui().copyB }}
-            </button>
             <button type="button" class="btn btn-line" (click)="edit()">{{ ui().edit }}</button>
           </div>
         </div>
@@ -139,4 +173,30 @@
       </div>
     </aside>
   </div>
+
+  @if (confirmOpen()) {
+    <div class="modal-root" role="dialog" aria-modal="true" [attr.aria-label]="ui().confirmT">
+      <button type="button" class="modal-backdrop" (click)="closeConfirm()" aria-label="Close"></button>
+      <div class="modal-card">
+        <h2>{{ ui().confirmT }}</h2>
+        <p class="text-justify">{{ ui().confirmP }}</p>
+        @if (formError()) {
+          <p class="banner-err" role="alert">{{ formError() }}</p>
+        }
+        <div class="modal-actions">
+          <button type="button" class="btn btn-gold" [disabled]="sending()" (click)="confirmSend()">
+            @if (sending()) {
+              <span class="btn-spin" aria-hidden="true"></span>
+              {{ ui().sending }}
+            } @else {
+              {{ ui().confirmYes }}
+            }
+          </button>
+          <button type="button" class="btn btn-line" [disabled]="sending()" (click)="closeConfirm()">
+            {{ ui().confirmNo }}
+          </button>
+        </div>
+      </div>
+    </div>
+  }
 </article>

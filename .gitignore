@@ -16,8 +16,10 @@ yarn-error.log
 testem.log
 /typings
 
-# Environments locaux (ne jamais committer de secrets)
+# Environments — seuls les *.example.ts sont versionnés
+/src/environments/environment.ts
 /src/environments/environment.development.ts
+!/src/environments/*.example.ts
 .env
 .env.*
 !.env.example

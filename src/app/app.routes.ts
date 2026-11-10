@@ -21,12 +21,30 @@ export const routes: Routes = [
         title: 'Kwaaa Group'
       },
       {
+        path: 'devis/confirm',
+        loadComponent: () =>
+          import('./features/mail-confirm/mail-confirm-page.component').then(
+            (m) => m.MailConfirmPageComponent
+          ),
+        data: { kind: 'devis' },
+        title: 'Confirmation · Kwaaa Group'
+      },
+      {
         path: 'devis',
         loadComponent: () =>
           import('./features/devis/devis-page/devis-page.component').then(
             (m) => m.DevisPageComponent
           ),
         title: 'Devis · Kwaaa Group'
+      },
+      {
+        path: 'partenariat/confirm',
+        loadComponent: () =>
+          import('./features/mail-confirm/mail-confirm-page.component').then(
+            (m) => m.MailConfirmPageComponent
+          ),
+        data: { kind: 'partenariat' },
+        title: 'Confirmation · Kwaaa Group'
       },
       {
         path: 'partenariat',

@@ -1,0 +1,50 @@
+<article class="confirm-page">
+  <div class="wrap panel">
+    @switch (state()) {
+      @case ('loading') {
+        <div class="state loading" aria-busy="true" aria-live="polite">
+          <span class="spinner" aria-hidden="true"></span>
+          <h1>{{ ui().loading }}</h1>
+        </div>
+      }
+      @case ('ok') {
+        <div class="state ok">
+          <span class="mark" aria-hidden="true">✓</span>
+          <h1>{{ ui().okT }}</h1>
+          <p class="text-justify">{{ ui().okP }}</p>
+          @if (email()) {
+            <p class="email">{{ email() }}</p>
+          }
+          <a class="btn btn-gold" routerLink="/">{{ ui().home }}</a>
+        </div>
+      }
+      @case ('expired') {
+        <div class="state warn">
+          <h1>{{ ui().expiredT }}</h1>
+          <p class="text-justify">{{ ui().expiredP }}</p>
+          <div class="ctas">
+            <a class="btn btn-gold" [routerLink]="againLink()">{{ ui().again }}</a>
+            <a class="btn btn-line" routerLink="/">{{ ui().home }}</a>
+          </div>
+        </div>
+      }
+      @case ('used') {
+        <div class="state ok">
+          <h1>{{ ui().usedT }}</h1>
+          <p class="text-justify">{{ ui().usedP }}</p>
+          <a class="btn btn-gold" routerLink="/">{{ ui().home }}</a>
+        </div>
+      }
+      @default {
+        <div class="state err">
+          <h1>{{ ui().errT }}</h1>
+          <p class="text-justify">{{ ui().errP }}</p>
+          <div class="ctas">
+            <a class="btn btn-gold" [routerLink]="againLink()">{{ ui().again }}</a>
+            <a class="btn btn-line" routerLink="/">{{ ui().home }}</a>
+          </div>
+        </div>
+      }
+    }
+  </div>
+</article>

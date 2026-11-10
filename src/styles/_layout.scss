@@ -30,8 +30,14 @@
   cursor: pointer;
   transition: transform 0.2s ease;
 
-  &:hover {
+  &:hover:not(:disabled) {
     transform: translateY(-2px);
+  }
+
+  &:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+    transform: none;
   }
 }
 

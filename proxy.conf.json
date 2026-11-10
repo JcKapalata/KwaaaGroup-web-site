@@ -1,0 +1,11 @@
+{
+  "/api/local-mail": {
+    "target": "http://127.0.0.1:3147",
+    "secure": false,
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/api/local-mail": "/api/kg-inbox"
+    },
+    "logLevel": "warn"
+  }
+}
