@@ -133,7 +133,6 @@ export class PartenariatPageComponent {
       inboxP: en
         ? 'We sent a confirmation link (valid 1 hour). After you confirm, our team receives your request at info@kwaaagroup.com.'
         : 'Nous avons envoyé un lien de confirmation (valide 1 heure). Après confirmation, notre équipe reçoit votre demande sur info@kwaaagroup.com.',
-      edit: en ? 'Edit' : 'Modifier',
       nom: en ? 'Full name' : 'Nom complet',
       org: en ? 'Company or organisation' : 'Entreprise ou organisation',
       type: en ? 'You are' : 'Vous êtes',
@@ -229,13 +228,6 @@ export class PartenariatPageComponent {
       this.formError.set(genericMailError(this.i18n.lang()));
       this.cdr.markForCheck();
     }
-  }
-
-  edit(): void {
-    this.mode.set('form');
-    this.formError.set('');
-    this.confirmOpen.set(false);
-    this.sending.set(false);
   }
 
   invalid(name: keyof typeof this.form.controls): boolean {

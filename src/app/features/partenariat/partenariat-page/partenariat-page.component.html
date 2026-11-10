@@ -152,15 +152,11 @@
         </form>
       } @else {
         <div class="done">
-          <div class="done-ico" aria-hidden="true"><span class="mail-pulse"></span></div>
           <h2>{{ ui().inboxT }}</h2>
           <p class="text-justify">{{ ui().inboxP }}</p>
           @if (submittedEmail()) {
             <p class="submitted-mail">{{ submittedEmail() }}</p>
           }
-          <div class="ctas">
-            <button type="button" class="btn btn-line" (click)="edit()">{{ ui().edit }}</button>
-          </div>
         </div>
       }
     </div>
